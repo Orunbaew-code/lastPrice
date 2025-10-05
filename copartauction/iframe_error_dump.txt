@@ -1,0 +1,183 @@
+
+=== ERROR ===
+Exception: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=140.0.7339.208)
+Stacktrace:
+	GetHandleVerifier [0x0x70c333+65459]
+	GetHandleVerifier [0x0x70c374+65524]
+	(No symbol) [0x0x52d973]
+	(No symbol) [0x0x50c19d]
+	(No symbol) [0x0x5a059e]
+	(No symbol) [0x0x5baef9]
+	(No symbol) [0x0x599bf6]
+	(No symbol) [0x0x56b38e]
+	(No symbol) [0x0x56c274]
+	GetHandleVerifier [0x0x98eda3+2697763]
+	GetHandleVerifier [0x0x989ec7+2677575]
+	GetHandleVerifier [0x0x734194+228884]
+	GetHandleVerifier [0x0x7249f8+165496]
+	GetHandleVerifier [0x0x72b18d+192013]
+	GetHandleVerifier [0x0x7147d8+99416]
+	GetHandleVerifier [0x0x714972+99826]
+	GetHandleVerifier [0x0x6febea+10346]
+	BaseThreadInitThunk [0x0x7552fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x775082ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x7750827e+238]
+
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 203, in join_new_auction
+    WebDriverWait(self.driver, 1800).until(
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\wait.py", line 129, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 204, in <lambda>
+    lambda d: len(d.find_elements(By.CSS_SELECTOR, "button.bid")) >= 2
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 967, in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {"using": by, "value": value})["value"] or []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=140.0.7339.208)
+Stacktrace:
+	GetHandleVerifier [0x0x70c333+65459]
+	GetHandleVerifier [0x0x70c374+65524]
+	(No symbol) [0x0x52d973]
+	(No symbol) [0x0x50c19d]
+	(No symbol) [0x0x5a059e]
+	(No symbol) [0x0x5baef9]
+	(No symbol) [0x0x599bf6]
+	(No symbol) [0x0x56b38e]
+	(No symbol) [0x0x56c274]
+	GetHandleVerifier [0x0x98eda3+2697763]
+	GetHandleVerifier [0x0x989ec7+2677575]
+	GetHandleVerifier [0x0x734194+228884]
+	GetHandleVerifier [0x0x7249f8+165496]
+	GetHandleVerifier [0x0x72b18d+192013]
+	GetHandleVerifier [0x0x7147d8+99416]
+	GetHandleVerifier [0x0x714972+99826]
+	GetHandleVerifier [0x0x6febea+10346]
+	BaseThreadInitThunk [0x0x7552fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x775082ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x7750827e+238]
+
+
+[ERROR] Failed to dump iframe HTML: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=140.0.7339.208)
+Stacktrace:
+	GetHandleVerifier [0x0x70c333+65459]
+	GetHandleVerifier [0x0x70c374+65524]
+	(No symbol) [0x0x52d973]
+	(No symbol) [0x0x50c19d]
+	(No symbol) [0x0x5a059e]
+	(No symbol) [0x0x5baef9]
+	(No symbol) [0x0x599bf6]
+	(No symbol) [0x0x56b38e]
+	(No symbol) [0x0x56c274]
+	GetHandleVerifier [0x0x98eda3+2697763]
+	GetHandleVerifier [0x0x989ec7+2677575]
+	GetHandleVerifier [0x0x734194+228884]
+	GetHandleVerifier [0x0x7249f8+165496]
+	GetHandleVerifier [0x0x72b18d+192013]
+	GetHandleVerifier [0x0x7147d8+99416]
+	GetHandleVerifier [0x0x714972+99826]
+	GetHandleVerifier [0x0x6febea+10346]
+	BaseThreadInitThunk [0x0x7552fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x775082ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x7750827e+238]
+
+
+=== ERROR ===
+Exception: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 203, in join_new_auction
+    WebDriverWait(self.driver, 1800).until(
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\wait.py", line 129, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 204, in <lambda>
+    lambda d: len(d.find_elements(By.CSS_SELECTOR, "button.bid")) >= 2
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 967, in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {"using": by, "value": value})["value"] or []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 455, in execute
+    response = cast(RemoteConnection, self.command_executor).execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 406, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 430, in _request
+    response = self._conn.request(method, url, body=body, headers=headers, timeout=self._client_config.timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\poolmanager.py", line 459, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+
+[ERROR] Failed to dump iframe HTML: HTTPConnectionPool(host='localhost', port=54524): Max retries exceeded with url: /session/affbb6613240d6c33cdf1e6783911e1f/source (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000186CE82FAA0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
