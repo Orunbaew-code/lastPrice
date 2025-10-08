@@ -1,0 +1,980 @@
+
+======================================================================
+JOIN AUCTION ATTEMPT: 2025-10-07 21:40:00
+======================================================================
+STEP 1: Closing any open dialogs
+STEP 2: Dialog close attempt completed
+STEP 3: Looking for iframe with ID 'iAuction5'
+
+❌ ERROR in join_new_auction: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x12bc333+65459]
+	GetHandleVerifier [0x0x12bc374+65524]
+	(No symbol) [0x0x10dd973]
+	(No symbol) [0x0x11276e7]
+	(No symbol) [0x0x1127a8b]
+	(No symbol) [0x0x116dea2]
+	(No symbol) [0x0x1149e44]
+	(No symbol) [0x0x116b606]
+	(No symbol) [0x0x1149bf6]
+	(No symbol) [0x0x111b38e]
+	(No symbol) [0x0x111c274]
+	GetHandleVerifier [0x0x153eda3+2697763]
+	GetHandleVerifier [0x0x1539ec7+2677575]
+	GetHandleVerifier [0x0x12e4194+228884]
+	GetHandleVerifier [0x0x12d49f8+165496]
+	GetHandleVerifier [0x0x12db18d+192013]
+	GetHandleVerifier [0x0x12c47d8+99416]
+	GetHandleVerifier [0x0x12c4972+99826]
+	GetHandleVerifier [0x0x12aebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+=== FULL TRACEBACK ===
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 170, in join_new_auction
+    iframe = WebDriverWait(self.driver, 60).until(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x12bc333+65459]
+	GetHandleVerifier [0x0x12bc374+65524]
+	(No symbol) [0x0x10dd973]
+	(No symbol) [0x0x11276e7]
+	(No symbol) [0x0x1127a8b]
+	(No symbol) [0x0x116dea2]
+	(No symbol) [0x0x1149e44]
+	(No symbol) [0x0x116b606]
+	(No symbol) [0x0x1149bf6]
+	(No symbol) [0x0x111b38e]
+	(No symbol) [0x0x111c274]
+	GetHandleVerifier [0x0x153eda3+2697763]
+	GetHandleVerifier [0x0x1539ec7+2677575]
+	GetHandleVerifier [0x0x12e4194+228884]
+	GetHandleVerifier [0x0x12d49f8+165496]
+	GetHandleVerifier [0x0x12db18d+192013]
+	GetHandleVerifier [0x0x12c47d8+99416]
+	GetHandleVerifier [0x0x12c4972+99826]
+	GetHandleVerifier [0x0x12aebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+=== END TRACEBACK ===
+
+=== CURRENT PAGE STATE ===
+Current URL: https://www.copart.com/auctionDashboard?intcmp=auctionsignin
+Switched back to main content for debugging
+Page source length: 461455 characters
+Total buttons on page: 46
+  Button 0: text='', id='', class='btn btn-default search-icon'
+  Button 1: text='Search inventory', id='', class='btn btn-lightblue marginleft15 search-btn'
+  Button 2: text='USA | English', id='', class='language_select btnlanguage d-f a-i_c'
+  Button 3: text='', id='', class='yes-btn'
+  Button 4: text='', id='', class='header-icon-notification'
+  Button 5: text='Chingiz', id='', class='user-dropdown-btn d-f a-i_c'
+  Button 6: text='', id='', class='yes-btn'
+  Button 7: text='', id='', class='user-dropdown-btn d-f a-i_c'
+  Button 8: text='', id='', class='btn btn-default search-icon-btn p-m-0'
+  Button 9: text='', id='', class='close d-f j-c_c'
+=== END DEBUG INFO ===
+
+
+======================================================================
+JOIN AUCTION ATTEMPT: 2025-10-08 00:11:01
+======================================================================
+STEP 1: Closing any open dialogs
+STEP 2: Dialog close attempt completed
+STEP 3: Looking for iframe with ID 'iAuction5'
+
+❌ ERROR in join_new_auction: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x12bc333+65459]
+	GetHandleVerifier [0x0x12bc374+65524]
+	(No symbol) [0x0x10dd973]
+	(No symbol) [0x0x11276e7]
+	(No symbol) [0x0x1127a8b]
+	(No symbol) [0x0x116dea2]
+	(No symbol) [0x0x1149e44]
+	(No symbol) [0x0x116b606]
+	(No symbol) [0x0x1149bf6]
+	(No symbol) [0x0x111b38e]
+	(No symbol) [0x0x111c274]
+	GetHandleVerifier [0x0x153eda3+2697763]
+	GetHandleVerifier [0x0x1539ec7+2677575]
+	GetHandleVerifier [0x0x12e4194+228884]
+	GetHandleVerifier [0x0x12d49f8+165496]
+	GetHandleVerifier [0x0x12db18d+192013]
+	GetHandleVerifier [0x0x12c47d8+99416]
+	GetHandleVerifier [0x0x12c4972+99826]
+	GetHandleVerifier [0x0x12aebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+=== FULL TRACEBACK ===
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 170, in join_new_auction
+    iframe = WebDriverWait(self.driver, 60).until(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x12bc333+65459]
+	GetHandleVerifier [0x0x12bc374+65524]
+	(No symbol) [0x0x10dd973]
+	(No symbol) [0x0x11276e7]
+	(No symbol) [0x0x1127a8b]
+	(No symbol) [0x0x116dea2]
+	(No symbol) [0x0x1149e44]
+	(No symbol) [0x0x116b606]
+	(No symbol) [0x0x1149bf6]
+	(No symbol) [0x0x111b38e]
+	(No symbol) [0x0x111c274]
+	GetHandleVerifier [0x0x153eda3+2697763]
+	GetHandleVerifier [0x0x1539ec7+2677575]
+	GetHandleVerifier [0x0x12e4194+228884]
+	GetHandleVerifier [0x0x12d49f8+165496]
+	GetHandleVerifier [0x0x12db18d+192013]
+	GetHandleVerifier [0x0x12c47d8+99416]
+	GetHandleVerifier [0x0x12c4972+99826]
+	GetHandleVerifier [0x0x12aebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+=== END TRACEBACK ===
+
+=== CURRENT PAGE STATE ===
+Current URL: https://www.copart.com/auctionDashboard?intcmp=auctionsignin
+Switched back to main content for debugging
+Page source length: 463009 characters
+Total buttons on page: 46
+  Button 0: text='', id='', class='btn btn-default search-icon'
+  Button 1: text='Search inventory', id='', class='btn btn-lightblue marginleft15 search-btn'
+  Button 2: text='USA | English', id='', class='language_select btnlanguage d-f a-i_c'
+  Button 3: text='', id='', class='yes-btn'
+  Button 4: text='', id='', class='header-icon-notification'
+  Button 5: text='Asadbek', id='', class='user-dropdown-btn d-f a-i_c'
+  Button 6: text='', id='', class='yes-btn'
+  Button 7: text='', id='', class='user-dropdown-btn d-f a-i_c'
+  Button 8: text='', id='', class='btn btn-default search-icon-btn p-m-0'
+  Button 9: text='', id='', class='close d-f j-c_c'
+=== END DEBUG INFO ===
+
+
+======================================================================
+JOIN AUCTION ATTEMPT: 2025-10-08 01:28:33
+======================================================================
+STEP 1: Closing any open dialogs
+STEP 2: Dialog close attempt completed
+STEP 3: Looking for iframe with ID 'iAuction5'
+
+❌ ERROR in join_new_auction: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x12bc333+65459]
+	GetHandleVerifier [0x0x12bc374+65524]
+	(No symbol) [0x0x10dd973]
+	(No symbol) [0x0x11276e7]
+	(No symbol) [0x0x1127a8b]
+	(No symbol) [0x0x116dea2]
+	(No symbol) [0x0x1149e44]
+	(No symbol) [0x0x116b606]
+	(No symbol) [0x0x1149bf6]
+	(No symbol) [0x0x111b38e]
+	(No symbol) [0x0x111c274]
+	GetHandleVerifier [0x0x153eda3+2697763]
+	GetHandleVerifier [0x0x1539ec7+2677575]
+	GetHandleVerifier [0x0x12e4194+228884]
+	GetHandleVerifier [0x0x12d49f8+165496]
+	GetHandleVerifier [0x0x12db18d+192013]
+	GetHandleVerifier [0x0x12c47d8+99416]
+	GetHandleVerifier [0x0x12c4972+99826]
+	GetHandleVerifier [0x0x12aebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+=== FULL TRACEBACK ===
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 170, in join_new_auction
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x12bc333+65459]
+	GetHandleVerifier [0x0x12bc374+65524]
+	(No symbol) [0x0x10dd973]
+	(No symbol) [0x0x11276e7]
+	(No symbol) [0x0x1127a8b]
+	(No symbol) [0x0x116dea2]
+	(No symbol) [0x0x1149e44]
+	(No symbol) [0x0x116b606]
+	(No symbol) [0x0x1149bf6]
+	(No symbol) [0x0x111b38e]
+	(No symbol) [0x0x111c274]
+	GetHandleVerifier [0x0x153eda3+2697763]
+	GetHandleVerifier [0x0x1539ec7+2677575]
+	GetHandleVerifier [0x0x12e4194+228884]
+	GetHandleVerifier [0x0x12d49f8+165496]
+	GetHandleVerifier [0x0x12db18d+192013]
+	GetHandleVerifier [0x0x12c47d8+99416]
+	GetHandleVerifier [0x0x12c4972+99826]
+	GetHandleVerifier [0x0x12aebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+=== END TRACEBACK ===
+
+=== CURRENT PAGE STATE ===
+Current URL: https://www.copart.com/auctionDashboard?intcmp=auctionsignin
+Switched back to main content for debugging
+Page source length: 461353 characters
+Total buttons on page: 46
+  Button 0: text='', id='', class='btn btn-default search-icon'
+  Button 1: text='Search inventory', id='', class='btn btn-lightblue marginleft15 search-btn'
+  Button 2: text='USA | English', id='', class='language_select btnlanguage d-f a-i_c'
+  Button 3: text='', id='', class='yes-btn'
+  Button 4: text='', id='', class='header-icon-notification'
+  Button 5: text='Chingiz', id='', class='user-dropdown-btn d-f a-i_c'
+  Button 6: text='', id='', class='yes-btn'
+  Button 7: text='', id='', class='user-dropdown-btn d-f a-i_c'
+  Button 8: text='', id='', class='btn btn-default search-icon-btn p-m-0'
+  Button 9: text='', id='', class='close d-f j-c_c'
+=== END DEBUG INFO ===
+
+STEP 2: Dialog close attempt completed
+STEP 3: Looking for iframe with ID 'iAuction5'
+STEP 6: Waiting for join buttons (max 30 minutes)
+Looking for elements with CSS selector: 'button.bid'
+STEP 7: ✓ Join buttons condition met (at least 1 buttons found)
+STEP 8: Found 3 join buttons
+  Button 0: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 1: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 2: text='Join', enabled=True, displayed=True, classes='bid'
+STEP 9: Attempting to click join button
+  Trying button at index 1 (second button)
+  ❌ Failed to click button at index 1: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	GetHandleVerifier [0x0x115c333+65459]
+	GetHandleVerifier [0x0x115c374+65524]
+	(No symbol) [0x0xf7d973]
+	(No symbol) [0x0xf84330]
+	(No symbol) [0x0xf86734]
+	(No symbol) [0x0xf867c8]
+	(No symbol) [0x0xfc941a]
+	(No symbol) [0x0xfbd11a]
+	(No symbol) [0x0xfe9dfc]
+	(No symbol) [0x0xfbcbf4]
+	(No symbol) [0x0xfe9fb4]
+	(No symbol) [0x0x100b606]
+	(No symbol) [0x0xfe9bf6]
+	(No symbol) [0x0xfbb38e]
+	(No symbol) [0x0xfbc274]
+	GetHandleVerifier [0x0x13deda3+2697763]
+	GetHandleVerifier [0x0x13d9ec7+2677575]
+	GetHandleVerifier [0x0x1184194+228884]
+	GetHandleVerifier [0x0x11749f8+165496]
+	GetHandleVerifier [0x0x117b18d+192013]
+	GetHandleVerifier [0x0x11647d8+99416]
+	GetHandleVerifier [0x0x1164972+99826]
+	GetHandleVerifier [0x0x114ebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+  Trying button at index 0 (first button) as fallback
+  ❌ Failed to click button at index 0: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	GetHandleVerifier [0x0x115c333+65459]
+	GetHandleVerifier [0x0x115c374+65524]
+	(No symbol) [0x0xf7d973]
+	(No symbol) [0x0xf84330]
+	(No symbol) [0x0xf86734]
+	(No symbol) [0x0xf867c8]
+	(No symbol) [0x0xfc941a]
+	(No symbol) [0x0xfbd11a]
+	(No symbol) [0x0xfe9dfc]
+	(No symbol) [0x0xfbcbf4]
+	(No symbol) [0x0xfe9fb4]
+	(No symbol) [0x0x100b606]
+	(No symbol) [0x0xfe9bf6]
+	(No symbol) [0x0xfbb38e]
+	(No symbol) [0x0xfbc274]
+	GetHandleVerifier [0x0x13deda3+2697763]
+	GetHandleVerifier [0x0x13d9ec7+2677575]
+	GetHandleVerifier [0x0x1184194+228884]
+	GetHandleVerifier [0x0x11749f8+165496]
+	GetHandleVerifier [0x0x117b18d+192013]
+	GetHandleVerifier [0x0x11647d8+99416]
+	GetHandleVerifier [0x0x1164972+99826]
+	GetHandleVerifier [0x0x114ebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+
+❌ ERROR in join_new_auction: Could not click any join button. First error: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	GetHandleVerifier [0x0x115c333+65459]
+	GetHandleVerifier [0x0x115c374+65524]
+	(No symbol) [0x0xf7d973]
+	(No symbol) [0x0xf84330]
+	(No symbol) [0x0xf86734]
+	(No symbol) [0x0xf867c8]
+	(No symbol) [0x0xfc941a]
+	(No symbol) [0x0xfbd11a]
+	(No symbol) [0x0xfe9dfc]
+	(No symbol) [0x0xfbcbf4]
+	(No symbol) [0x0xfe9fb4]
+	(No symbol) [0x0x100b606]
+	(No symbol) [0x0xfe9bf6]
+	(No symbol) [0x0xfbb38e]
+	(No symbol) [0x0xfbc274]
+	GetHandleVerifier [0x0x13deda3+2697763]
+	GetHandleVerifier [0x0x13d9ec7+2677575]
+	GetHandleVerifier [0x0x1184194+228884]
+	GetHandleVerifier [0x0x11749f8+165496]
+	GetHandleVerifier [0x0x117b18d+192013]
+	GetHandleVerifier [0x0x11647d8+99416]
+	GetHandleVerifier [0x0x1164972+99826]
+	GetHandleVerifier [0x0x114ebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+, Second error: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	GetHandleVerifier [0x0x115c333+65459]
+	GetHandleVerifier [0x0x115c374+65524]
+	(No symbol) [0x0xf7d973]
+	(No symbol) [0x0xf84330]
+	(No symbol) [0x0xf86734]
+	(No symbol) [0x0xf867c8]
+	(No symbol) [0x0xfc941a]
+	(No symbol) [0x0xfbd11a]
+	(No symbol) [0x0xfe9dfc]
+	(No symbol) [0x0xfbcbf4]
+	(No symbol) [0x0xfe9fb4]
+	(No symbol) [0x0x100b606]
+	(No symbol) [0x0xfe9bf6]
+	(No symbol) [0x0xfbb38e]
+	(No symbol) [0x0xfbc274]
+	GetHandleVerifier [0x0x13deda3+2697763]
+	GetHandleVerifier [0x0x13d9ec7+2677575]
+	GetHandleVerifier [0x0x1184194+228884]
+	GetHandleVerifier [0x0x11749f8+165496]
+	GetHandleVerifier [0x0x117b18d+192013]
+	GetHandleVerifier [0x0x11647d8+99416]
+	GetHandleVerifier [0x0x1164972+99826]
+	GetHandleVerifier [0x0x114ebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+=== FULL TRACEBACK ===
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 198, in join_new_auction
+    join_buttons[0].click()
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 120, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 573, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	GetHandleVerifier [0x0x115c333+65459]
+	GetHandleVerifier [0x0x115c374+65524]
+	(No symbol) [0x0xf7d973]
+	(No symbol) [0x0xf84330]
+	(No symbol) [0x0xf86734]
+	(No symbol) [0x0xf867c8]
+	(No symbol) [0x0xfc941a]
+	(No symbol) [0x0xfbd11a]
+	(No symbol) [0x0xfe9dfc]
+	(No symbol) [0x0xfbcbf4]
+	(No symbol) [0x0xfe9fb4]
+	(No symbol) [0x0x100b606]
+	(No symbol) [0x0xfe9bf6]
+	(No symbol) [0x0xfbb38e]
+	(No symbol) [0x0xfbc274]
+	GetHandleVerifier [0x0x13deda3+2697763]
+	GetHandleVerifier [0x0x13d9ec7+2677575]
+	GetHandleVerifier [0x0x1184194+228884]
+	GetHandleVerifier [0x0x11749f8+165496]
+	GetHandleVerifier [0x0x117b18d+192013]
+	GetHandleVerifier [0x0x11647d8+99416]
+	GetHandleVerifier [0x0x1164972+99826]
+	GetHandleVerifier [0x0x114ebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 211, in join_new_auction
+    join_buttons[0].click()
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 120, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 573, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	GetHandleVerifier [0x0x115c333+65459]
+	GetHandleVerifier [0x0x115c374+65524]
+	(No symbol) [0x0xf7d973]
+	(No symbol) [0x0xf84330]
+	(No symbol) [0x0xf86734]
+	(No symbol) [0x0xf867c8]
+	(No symbol) [0x0xfc941a]
+	(No symbol) [0x0xfbd11a]
+	(No symbol) [0x0xfe9dfc]
+	(No symbol) [0x0xfbcbf4]
+	(No symbol) [0x0xfe9fb4]
+	(No symbol) [0x0x100b606]
+	(No symbol) [0x0xfe9bf6]
+	(No symbol) [0x0xfbb38e]
+	(No symbol) [0x0xfbc274]
+	GetHandleVerifier [0x0x13deda3+2697763]
+	GetHandleVerifier [0x0x13d9ec7+2677575]
+	GetHandleVerifier [0x0x1184194+228884]
+	GetHandleVerifier [0x0x11749f8+165496]
+	GetHandleVerifier [0x0x117b18d+192013]
+	GetHandleVerifier [0x0x11647d8+99416]
+	GetHandleVerifier [0x0x1164972+99826]
+	GetHandleVerifier [0x0x114ebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 219, in join_new_auction
+    raise Exception(f"Could not click any join button. First error: {e}, Second error: {e2}")
+Exception: Could not click any join button. First error: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	GetHandleVerifier [0x0x115c333+65459]
+	GetHandleVerifier [0x0x115c374+65524]
+	(No symbol) [0x0xf7d973]
+	(No symbol) [0x0xf84330]
+	(No symbol) [0x0xf86734]
+	(No symbol) [0x0xf867c8]
+	(No symbol) [0x0xfc941a]
+	(No symbol) [0x0xfbd11a]
+	(No symbol) [0x0xfe9dfc]
+	(No symbol) [0x0xfbcbf4]
+	(No symbol) [0x0xfe9fb4]
+	(No symbol) [0x0x100b606]
+	(No symbol) [0x0xfe9bf6]
+	(No symbol) [0x0xfbb38e]
+	(No symbol) [0x0xfbc274]
+	GetHandleVerifier [0x0x13deda3+2697763]
+	GetHandleVerifier [0x0x13d9ec7+2677575]
+	GetHandleVerifier [0x0x1184194+228884]
+	GetHandleVerifier [0x0x11749f8+165496]
+	GetHandleVerifier [0x0x117b18d+192013]
+	GetHandleVerifier [0x0x11647d8+99416]
+	GetHandleVerifier [0x0x1164972+99826]
+	GetHandleVerifier [0x0x114ebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+, Second error: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	GetHandleVerifier [0x0x115c333+65459]
+	GetHandleVerifier [0x0x115c374+65524]
+	(No symbol) [0x0xf7d973]
+	(No symbol) [0x0xf84330]
+	(No symbol) [0x0xf86734]
+	(No symbol) [0x0xf867c8]
+	(No symbol) [0x0xfc941a]
+	(No symbol) [0x0xfbd11a]
+	(No symbol) [0x0xfe9dfc]
+	(No symbol) [0x0xfbcbf4]
+	(No symbol) [0x0xfe9fb4]
+	(No symbol) [0x0x100b606]
+	(No symbol) [0x0xfe9bf6]
+	(No symbol) [0x0xfbb38e]
+	(No symbol) [0x0xfbc274]
+	GetHandleVerifier [0x0x13deda3+2697763]
+	GetHandleVerifier [0x0x13d9ec7+2677575]
+	GetHandleVerifier [0x0x1184194+228884]
+	GetHandleVerifier [0x0x11749f8+165496]
+	GetHandleVerifier [0x0x117b18d+192013]
+	GetHandleVerifier [0x0x11647d8+99416]
+	GetHandleVerifier [0x0x1164972+99826]
+	GetHandleVerifier [0x0x114ebea+10346]
+	BaseThreadInitThunk [0x0x7672fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf82ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77cf827e+238]
+
+=== END TRACEBACK ===
+
+=== CURRENT PAGE STATE ===
+Current URL: https://g2auction.copart.com/g2/#/
+Switched back to main content for debugging
+Page source length: 115346 characters
+Total buttons on page: 4
+  Button 0: text='Join', id='', class='bid'
+  Button 1: text='Join', id='', class='bid'
+  Button 2: text='', id='', class='p-element p-ripple ng-tns-c662934324-3 p-dialog-header-icon p-dialog-header-close p-link p-button p-component ng-star-inserted'
+  Button 3: text='Join Now', id='', class='btn btn-primary ng-star-inserted'
+=== END DEBUG INFO ===
+
+STEP 2: Dialog close attempt completed
+STEP 3: Looking for iframe with ID 'iAuction5'
+STEP 6: Waiting for join buttons (max 30 minutes)
+Looking for elements with CSS selector: 'button.bid'
+STEP 7: ✓ Join buttons condition met (at least 1 buttons found)
+STEP 8: Found 1 join buttons
+  Button 0: text='Join', enabled=True, displayed=True, classes='bid'
+STEP 9: Attempting to click join button
+  Trying button at index 1 (second button)
+  ✓ Successfully clicked button at index 0
+STEP 10: Switching back to main window
+STEP 11: ✓ Successfully switched to main window
+STEP 12: Starting auction page parsing
+✅ SUCCESS: Join auction process completed successfully!
+
+STEP 2: Dialog close attempt completed
+STEP 3: Looking for iframe with ID 'iAuction5'
+STEP 6: Waiting for join buttons (max 30 minutes)
+Looking for elements with CSS selector: 'button.bid'
+
+❌ ERROR in join_new_auction: Message: 
+
+=== FULL TRACEBACK ===
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 164, in join_new_auction
+    WebDriverWait(self.driver, 1800).until(
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+=== END TRACEBACK ===
+
+=== CURRENT PAGE STATE ===
+Current URL: https://g2auction.copart.com/g2/#/
+Switched back to main content for debugging
+Page source length: 69966 characters
+Total buttons on page: 0
+=== END DEBUG INFO ===
+
+STEP 2: Dialog close attempt completed
+STEP 3: Looking for iframe with ID 'iAuction5'
+STEP 6: Waiting for join buttons (max 30 minutes)
+Looking for elements with CSS selector: 'button.bid'
+STEP 7: ✓ Join buttons condition met (at least 1 buttons found)
+STEP 8: Found 50 join buttons
+  Button 0: text='', enabled=True, displayed=False, classes='bid'
+  Button 1: text='', enabled=True, displayed=False, classes='bid'
+  Button 2: text='', enabled=True, displayed=False, classes='bid'
+  Button 3: text='', enabled=True, displayed=False, classes='bid'
+  Button 4: text='', enabled=True, displayed=False, classes='bid'
+  Button 5: text='', enabled=True, displayed=False, classes='bid'
+  Button 6: text='', enabled=True, displayed=False, classes='bid'
+  Button 7: text='', enabled=True, displayed=False, classes='bid'
+  Button 8: text='', enabled=True, displayed=False, classes='bid'
+  Button 9: text='', enabled=True, displayed=False, classes='bid'
+  Button 10: text='', enabled=True, displayed=False, classes='bid'
+  Button 11: text='', enabled=True, displayed=False, classes='bid'
+  Button 12: text='', enabled=True, displayed=False, classes='bid'
+  Button 13: text='', enabled=True, displayed=False, classes='bid'
+  Button 14: text='', enabled=True, displayed=False, classes='bid'
+  Button 15: text='', enabled=True, displayed=False, classes='bid'
+  Button 16: text='', enabled=True, displayed=False, classes='bid'
+  Button 17: text='', enabled=True, displayed=False, classes='bid'
+  Button 18: text='', enabled=True, displayed=False, classes='bid'
+  Button 19: text='', enabled=True, displayed=False, classes='bid'
+  Button 20: text='', enabled=True, displayed=False, classes='bid'
+  Button 21: text='', enabled=True, displayed=False, classes='bid'
+  Button 22: text='', enabled=True, displayed=False, classes='bid'
+  Button 23: text='', enabled=True, displayed=False, classes='bid'
+  Button 24: text='', enabled=True, displayed=False, classes='bid'
+  Button 25: text='', enabled=True, displayed=False, classes='bid'
+  Button 26: text='', enabled=True, displayed=False, classes='bid'
+  Button 27: text='', enabled=True, displayed=False, classes='bid'
+  Button 28: text='', enabled=True, displayed=False, classes='bid'
+  Button 29: text='', enabled=True, displayed=False, classes='bid'
+  Button 30: text='', enabled=True, displayed=False, classes='bid'
+  Button 31: text='', enabled=True, displayed=False, classes='bid'
+  Button 32: text='', enabled=True, displayed=False, classes='bid'
+  Button 33: text='', enabled=True, displayed=False, classes='bid'
+  Button 34: text='', enabled=True, displayed=False, classes='bid'
+  Button 35: text='', enabled=True, displayed=False, classes='bid'
+  Button 36: text='', enabled=True, displayed=False, classes='bid'
+  Button 37: text='', enabled=True, displayed=False, classes='bid'
+  Button 38: text='', enabled=True, displayed=False, classes='bid'
+  Button 39: text='', enabled=True, displayed=False, classes='bid'
+  Button 40: text='', enabled=True, displayed=False, classes='bid'
+  Button 41: text='', enabled=True, displayed=False, classes='bid'
+  Button 42: text='', enabled=True, displayed=False, classes='bid'
+  Button 43: text='', enabled=True, displayed=False, classes='bid'
+  Button 44: text='', enabled=True, displayed=False, classes='bid'
+  Button 45: text='', enabled=True, displayed=False, classes='bid'
+  Button 46: text='', enabled=True, displayed=False, classes='bid'
+  Button 47: text='', enabled=True, displayed=False, classes='bid'
+  Button 48: text='', enabled=True, displayed=False, classes='bid'
+  Button 49: text='', enabled=True, displayed=False, classes='bid'
+STEP 9: Attempting to click join button
+  Trying button at index 1 (second button)
+  ❌ Failed to click button at index 1: Message: element not interactable
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x108c333+65459]
+	GetHandleVerifier [0x0x108c374+65524]
+	(No symbol) [0x0xead7c0]
+	(No symbol) [0x0xef88fe]
+	(No symbol) [0x0xeed195]
+	(No symbol) [0x0xf19dfc]
+	(No symbol) [0x0xeecbf4]
+	(No symbol) [0x0xf19fb4]
+	(No symbol) [0x0xf3b606]
+	(No symbol) [0x0xf19bf6]
+	(No symbol) [0x0xeeb38e]
+	(No symbol) [0x0xeec274]
+	GetHandleVerifier [0x0x130eda3+2697763]
+	GetHandleVerifier [0x0x1309ec7+2677575]
+	GetHandleVerifier [0x0x10b4194+228884]
+	GetHandleVerifier [0x0x10a49f8+165496]
+	GetHandleVerifier [0x0x10ab18d+192013]
+	GetHandleVerifier [0x0x10947d8+99416]
+	GetHandleVerifier [0x0x1094972+99826]
+	GetHandleVerifier [0x0x107ebea+10346]
+	BaseThreadInitThunk [0x0x7724fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77e882ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77e8827e+238]
+
+  Trying button at index 0 (first button) as fallback
+  ❌ Failed to click button at index 0: Message: element not interactable
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x108c333+65459]
+	GetHandleVerifier [0x0x108c374+65524]
+	(No symbol) [0x0xead7c0]
+	(No symbol) [0x0xef88fe]
+	(No symbol) [0x0xeed195]
+	(No symbol) [0x0xf19dfc]
+	(No symbol) [0x0xeecbf4]
+	(No symbol) [0x0xf19fb4]
+	(No symbol) [0x0xf3b606]
+	(No symbol) [0x0xf19bf6]
+	(No symbol) [0x0xeeb38e]
+	(No symbol) [0x0xeec274]
+	GetHandleVerifier [0x0x130eda3+2697763]
+	GetHandleVerifier [0x0x1309ec7+2677575]
+	GetHandleVerifier [0x0x10b4194+228884]
+	GetHandleVerifier [0x0x10a49f8+165496]
+	GetHandleVerifier [0x0x10ab18d+192013]
+	GetHandleVerifier [0x0x10947d8+99416]
+	GetHandleVerifier [0x0x1094972+99826]
+	GetHandleVerifier [0x0x107ebea+10346]
+	BaseThreadInitThunk [0x0x7724fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77e882ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77e8827e+238]
+
+
+❌ ERROR in join_new_auction: Could not click any join button. First error: Message: element not interactable
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x108c333+65459]
+	GetHandleVerifier [0x0x108c374+65524]
+	(No symbol) [0x0xead7c0]
+	(No symbol) [0x0xef88fe]
+	(No symbol) [0x0xeed195]
+	(No symbol) [0x0xf19dfc]
+	(No symbol) [0x0xeecbf4]
+	(No symbol) [0x0xf19fb4]
+	(No symbol) [0x0xf3b606]
+	(No symbol) [0x0xf19bf6]
+	(No symbol) [0x0xeeb38e]
+	(No symbol) [0x0xeec274]
+	GetHandleVerifier [0x0x130eda3+2697763]
+	GetHandleVerifier [0x0x1309ec7+2677575]
+	GetHandleVerifier [0x0x10b4194+228884]
+	GetHandleVerifier [0x0x10a49f8+165496]
+	GetHandleVerifier [0x0x10ab18d+192013]
+	GetHandleVerifier [0x0x10947d8+99416]
+	GetHandleVerifier [0x0x1094972+99826]
+	GetHandleVerifier [0x0x107ebea+10346]
+	BaseThreadInitThunk [0x0x7724fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77e882ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77e8827e+238]
+, Second error: Message: element not interactable
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x108c333+65459]
+	GetHandleVerifier [0x0x108c374+65524]
+	(No symbol) [0x0xead7c0]
+	(No symbol) [0x0xef88fe]
+	(No symbol) [0x0xeed195]
+	(No symbol) [0x0xf19dfc]
+	(No symbol) [0x0xeecbf4]
+	(No symbol) [0x0xf19fb4]
+	(No symbol) [0x0xf3b606]
+	(No symbol) [0x0xf19bf6]
+	(No symbol) [0x0xeeb38e]
+	(No symbol) [0x0xeec274]
+	GetHandleVerifier [0x0x130eda3+2697763]
+	GetHandleVerifier [0x0x1309ec7+2677575]
+	GetHandleVerifier [0x0x10b4194+228884]
+	GetHandleVerifier [0x0x10a49f8+165496]
+	GetHandleVerifier [0x0x10ab18d+192013]
+	GetHandleVerifier [0x0x10947d8+99416]
+	GetHandleVerifier [0x0x1094972+99826]
+	GetHandleVerifier [0x0x107ebea+10346]
+	BaseThreadInitThunk [0x0x7724fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77e882ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77e8827e+238]
+
+=== FULL TRACEBACK ===
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 198, in join_new_auction
+    join_buttons[0].click()
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 120, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 573, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x108c333+65459]
+	GetHandleVerifier [0x0x108c374+65524]
+	(No symbol) [0x0xead7c0]
+	(No symbol) [0x0xef88fe]
+	(No symbol) [0x0xeed195]
+	(No symbol) [0x0xf19dfc]
+	(No symbol) [0x0xeecbf4]
+	(No symbol) [0x0xf19fb4]
+	(No symbol) [0x0xf3b606]
+	(No symbol) [0x0xf19bf6]
+	(No symbol) [0x0xeeb38e]
+	(No symbol) [0x0xeec274]
+	GetHandleVerifier [0x0x130eda3+2697763]
+	GetHandleVerifier [0x0x1309ec7+2677575]
+	GetHandleVerifier [0x0x10b4194+228884]
+	GetHandleVerifier [0x0x10a49f8+165496]
+	GetHandleVerifier [0x0x10ab18d+192013]
+	GetHandleVerifier [0x0x10947d8+99416]
+	GetHandleVerifier [0x0x1094972+99826]
+	GetHandleVerifier [0x0x107ebea+10346]
+	BaseThreadInitThunk [0x0x7724fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77e882ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77e8827e+238]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 211, in join_new_auction
+    join_buttons[0].click()
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 120, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 573, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x108c333+65459]
+	GetHandleVerifier [0x0x108c374+65524]
+	(No symbol) [0x0xead7c0]
+	(No symbol) [0x0xef88fe]
+	(No symbol) [0x0xeed195]
+	(No symbol) [0x0xf19dfc]
+	(No symbol) [0x0xeecbf4]
+	(No symbol) [0x0xf19fb4]
+	(No symbol) [0x0xf3b606]
+	(No symbol) [0x0xf19bf6]
+	(No symbol) [0x0xeeb38e]
+	(No symbol) [0x0xeec274]
+	GetHandleVerifier [0x0x130eda3+2697763]
+	GetHandleVerifier [0x0x1309ec7+2677575]
+	GetHandleVerifier [0x0x10b4194+228884]
+	GetHandleVerifier [0x0x10a49f8+165496]
+	GetHandleVerifier [0x0x10ab18d+192013]
+	GetHandleVerifier [0x0x10947d8+99416]
+	GetHandleVerifier [0x0x1094972+99826]
+	GetHandleVerifier [0x0x107ebea+10346]
+	BaseThreadInitThunk [0x0x7724fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77e882ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77e8827e+238]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Orunbaew_SE\Scrapy\practice\copartauction\copartauction\copartauction\spiders\copartonline.py", line 219, in join_new_auction
+    raise Exception(f"Could not click any join button. First error: {e}, Second error: {e2}")
+Exception: Could not click any join button. First error: Message: element not interactable
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x108c333+65459]
+	GetHandleVerifier [0x0x108c374+65524]
+	(No symbol) [0x0xead7c0]
+	(No symbol) [0x0xef88fe]
+	(No symbol) [0x0xeed195]
+	(No symbol) [0x0xf19dfc]
+	(No symbol) [0x0xeecbf4]
+	(No symbol) [0x0xf19fb4]
+	(No symbol) [0x0xf3b606]
+	(No symbol) [0x0xf19bf6]
+	(No symbol) [0x0xeeb38e]
+	(No symbol) [0x0xeec274]
+	GetHandleVerifier [0x0x130eda3+2697763]
+	GetHandleVerifier [0x0x1309ec7+2677575]
+	GetHandleVerifier [0x0x10b4194+228884]
+	GetHandleVerifier [0x0x10a49f8+165496]
+	GetHandleVerifier [0x0x10ab18d+192013]
+	GetHandleVerifier [0x0x10947d8+99416]
+	GetHandleVerifier [0x0x1094972+99826]
+	GetHandleVerifier [0x0x107ebea+10346]
+	BaseThreadInitThunk [0x0x7724fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77e882ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77e8827e+238]
+, Second error: Message: element not interactable
+  (Session info: chrome=140.0.7339.208); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	GetHandleVerifier [0x0x108c333+65459]
+	GetHandleVerifier [0x0x108c374+65524]
+	(No symbol) [0x0xead7c0]
+	(No symbol) [0x0xef88fe]
+	(No symbol) [0x0xeed195]
+	(No symbol) [0x0xf19dfc]
+	(No symbol) [0x0xeecbf4]
+	(No symbol) [0x0xf19fb4]
+	(No symbol) [0x0xf3b606]
+	(No symbol) [0x0xf19bf6]
+	(No symbol) [0x0xeeb38e]
+	(No symbol) [0x0xeec274]
+	GetHandleVerifier [0x0x130eda3+2697763]
+	GetHandleVerifier [0x0x1309ec7+2677575]
+	GetHandleVerifier [0x0x10b4194+228884]
+	GetHandleVerifier [0x0x10a49f8+165496]
+	GetHandleVerifier [0x0x10ab18d+192013]
+	GetHandleVerifier [0x0x10947d8+99416]
+	GetHandleVerifier [0x0x1094972+99826]
+	GetHandleVerifier [0x0x107ebea+10346]
+	BaseThreadInitThunk [0x0x7724fcc9+25]
+	RtlGetAppContainerNamedObjectPath [0x0x77e882ae+286]
+	RtlGetAppContainerNamedObjectPath [0x0x77e8827e+238]
+
+=== END TRACEBACK ===
+
+=== CURRENT PAGE STATE ===
+Current URL: https://g2auction.copart.com/g2/#/
+Switched back to main content for debugging
+Page source length: 306938 characters
+Total buttons on page: 50
+  Button 0: text='', id='', class='bid'
+  Button 1: text='', id='', class='bid'
+  Button 2: text='', id='', class='bid'
+  Button 3: text='', id='', class='bid'
+  Button 4: text='', id='', class='bid'
+  Button 5: text='', id='', class='bid'
+  Button 6: text='', id='', class='bid'
+  Button 7: text='', id='', class='bid'
+  Button 8: text='', id='', class='bid'
+  Button 9: text='', id='', class='bid'
+=== END DEBUG INFO ===
+
+STEP 2: Dialog close attempt completed
+STEP 3: Looking for iframe with ID 'iAuction5'
+STEP 6: Waiting for join buttons (max 30 minutes)
+Looking for elements with CSS selector: 'button.bid'
+STEP 7: ✓ Join buttons condition met (at least 1 buttons found)
+STEP 8: Found 52 join buttons
+  Button 0: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 1: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 2: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 3: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 4: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 5: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 6: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 7: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 8: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 9: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 10: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 11: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 12: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 13: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 14: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 15: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 16: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 17: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 18: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 19: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 20: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 21: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 22: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 23: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 24: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 25: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 26: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 27: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 28: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 29: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 30: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 31: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 32: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 33: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 34: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 35: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 36: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 37: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 38: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 39: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 40: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 41: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 42: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 43: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 44: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 45: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 46: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 47: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 48: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 49: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 50: text='Join', enabled=True, displayed=True, classes='bid'
+  Button 51: text='Join', enabled=True, displayed=True, classes='bid'
+STEP 9: Attempting to click join button
+  Trying button at index 1 (second button)
+  ✓ Successfully clicked button at index 0
+STEP 10: Switching back to main window
+STEP 11: ✓ Successfully switched to main window
+STEP 12: Starting auction page parsing
+✅ SUCCESS: Join auction process completed successfully!
+

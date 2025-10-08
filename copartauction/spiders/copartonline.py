@@ -1,5 +1,4 @@
 import scrapy
-import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -8,10 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
-import traceback
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.common.exceptions import TimeoutException
+import time
 
 class CopartonlineSpider(scrapy.Spider):
     name = "copartonline"
@@ -86,10 +82,11 @@ class CopartonlineSpider(scrapy.Spider):
         try:
             seen = set()
             old_price = 0
-            iframe = WebDriverWait(self.driver, 3).until(
+            iframe = WebDriverWait(self.driver, 60).until(
                 EC.presence_of_element_located((By.TAG_NAME, "iframe"))
             )
             self.driver.switch_to.frame(iframe)
+            time.sleep(10)
 
             while True:
                 # Try to get the price from SVG <text> elements
@@ -115,23 +112,7 @@ class CopartonlineSpider(scrapy.Spider):
             except Exception as inner_e:
                 print(f"[ERROR SAVING FRAME] {inner_e}")
 
-        except NoSuchElementException:
-            try:
-                auction_end = WebDriverWait(self.driver, 15).until(
-                    EC.presence_of_element_located(
-                        (By.XPATH, "//div[contains(@class,'sale-end') and text()='Auction Ended']")
-                    )
-                )
-                if auction_end:
-                    with open("auction_results.txt", "a", encoding="utf-8") as f:
-                        f.write("AUCTION IS ENDED \n\n\n\n\n")
-                    
-                    print("✅ Auction ended. Leaving auction...")                        
-                    self.driver.get("https://www.copart.com/auctionDashboard")
-                    self.join_new_auction()
-            except:
-                pass  # if not found, continue scraping
-            
+        except NoSuchElementException:            
             title = None
             self.logger.warning("No title element found — skipping. selector=%s", "div.titlelbl.ellipsis[title]")
         except StaleElementReferenceException:
@@ -161,39 +142,32 @@ class CopartonlineSpider(scrapy.Spider):
     def join_new_auction(self):
         try:
             self.close_dialog_via_overlay()
-            # 🔹 Find the first visible "Join" button
+            
             WebDriverWait(self.driver, 1800).until(
-                lambda d: len(d.find_elements(By.CSS_SELECTOR, "button.bid")) >= 2
+                lambda d: len(d.find_elements(By.CSS_SELECTOR, "button.bid")) >= 1
             )
-
-            # Get all join buttons
             join_buttons = self.driver.find_elements(By.CSS_SELECTOR, "button.bid")
-
-            # Click the second button (index 1, since list is 0-based)
-            # try: 
-            #     join_buttons[1].click()
-            # except Exception as e:
-            join_buttons[0].click()
-            # After joining, start parsing again
+            try:
+                time.sleep(2)
+                join_buttons[0].click()
+                    
+            except Exception as e:
+                try:
+                    time.sleep(1)
+                    join_buttons[0].click()   
+                except Exception as e2:
+                    raise Exception(f"Could not click any join button. First error: {e}, Second error: {e2}")
+            
+            self.driver.switch_to.default_content()
             self.parse_auction_page()
 
         except Exception as e:
-            with open("iframe_error_dump.txt", "a", encoding="utf-8") as f:
-                f.write("\n=== ERROR ===\n")
-                f.write(f"Exception: {str(e)}\n")
-                f.write(traceback.format_exc())
-
-                try:
-                    # Save iframe HTML
-                    iframe_html = self.driver.page_source
-                    f.write("\n=== IFRAME HTML DUMP ===\n")
-                    f.write(iframe_html)
-                    f.write("\n=== END DUMP ===\n")
-                except Exception as inner_e:
-                    f.write(f"\n[ERROR] Failed to dump iframe HTML: {inner_e}\n")
-
             print(f"[ERROR] Could not join new auction: {e}")
-
+            try:
+                self.driver.switch_to.default_content()
+            except:
+                pass
+            
     def check_auction_ended(self):
         """Check if auction has ended"""
         try:
@@ -205,7 +179,7 @@ class CopartonlineSpider(scrapy.Spider):
             if auction_end:
                 print("✅ Auction ended. Leaving auction...")
                 # Your auction end logic here
-                self.driver.get("https://www.copart.com/auctionDashboard")
+                self.driver.get("https://g2auction.copart.com/g2/#/")
                 self.join_new_auction()
                 return "AUCTION_ENDED"
         except:
@@ -215,16 +189,20 @@ class CopartonlineSpider(scrapy.Spider):
     def close_dialog_via_overlay(self):
         """Click on the overlay/mask to close the Recommended Auctions dialog"""
         try:
-            # Wait for the overlay/mask to be present and clickable
-            overlay = WebDriverWait(self.driver, 10).until(
-                EC.element_to_be_clickable((By.CSS_SELECTOR, "div.p-dialog-mask"))
+            try:
+                iframe = WebDriverWait(self.driver, 60).until(
+                    EC.presence_of_element_located((By.ID, "iAuction5"))
+                )
+                self.driver.switch_to.frame(iframe)
+            except Exception as e:
+                print(f"❌ Could not find iframe: {e}")
+            
+            close_button = WebDriverWait(self.driver, 60).until(
+                EC.element_to_be_clickable((By.CSS_SELECTOR, "button.p-dialog-header-close"))
             )
             
-            # Click on the overlay (anywhere outside the dialog)
-            overlay.click()
-            print("✅ Closed dialog by clicking overlay")
-            return True
-            
+            # Click the X button
+            close_button.click()
         except Exception as e:
-            print(f"❌ Could not close via overlay: {e}")
+            print(f"❌ Could not close via X button: {e}")
             return False
