@@ -1,0 +1,4 @@
+auction_results.txt
+*.txt
+__pycache__/
+*.pyc

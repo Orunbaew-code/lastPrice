@@ -20,9 +20,8 @@ class CopartonlineSpider(scrapy.Spider):
         super().__init__(*args, **kwargs)
 
         chrome_options = Options()
-        chrome_options = Options()
         # Essential headless server flags
-        chrome_options.add_argument("--headless=new")
+        # chrome_options.add_argument("--headless=new")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-gpu")
@@ -123,12 +122,12 @@ class CopartonlineSpider(scrapy.Spider):
                 # Fill username/email
                 username_field = self.driver.find_element(By.ID, "username")
                 username_field.clear()
-                username_field.send_keys("orunbaew.1505@gmail.com")  # Replace with your username
+                username_field.send_keys("orunbayew151515@gmail.com")  # Replace with your username
                 
                 # Fill password
                 password_field = self.driver.find_element(By.ID, "password")
                 password_field.clear()
-                password_field.send_keys("1Dz948438")  # Replace with your password
+                password_field.send_keys("12-34-Zxcvbnm")  # Replace with your password
                 
                 # Click login button
                 login_button = self.driver.find_element(By.XPATH, 
@@ -264,6 +263,12 @@ class CopartonlineSpider(scrapy.Spider):
                 return "AUCTION_ENDED"
         except:
             # If auction end element not found, just continue
+            try:
+                close_button = self.driver.find_element(By.CSS_SELECTOR, "button.p-dialog-header-close")
+                self.join_new_auction()
+                return "AUCTION_ENDED"
+            except:
+                pass
             return None
 
     def close_dialog_via_overlay(self):
