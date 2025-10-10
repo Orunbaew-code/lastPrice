@@ -8,6 +8,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 import time
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from scrapy import cmdline
+import sys
 
 class CopartonlineSpider(scrapy.Spider):
     name = "copartonline"
@@ -17,17 +20,37 @@ class CopartonlineSpider(scrapy.Spider):
         super().__init__(*args, **kwargs)
 
         chrome_options = Options()
+        chrome_options = Options()
+        # Essential headless server flags
+        chrome_options.add_argument("--headless=new")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--disable-extensions")
         chrome_options.add_argument("--disable-gpu")
-        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+
+        # Performance optimizations for low server (keeping JS)
+        chrome_options.add_argument("--disable-extensions")
+        chrome_options.add_argument("--disable-plugins")
+        chrome_options.add_argument("--disable-background-timer-throttling")
+        chrome_options.add_argument("--disable-renderer-backgrounding")
+        chrome_options.add_argument("--disable-backgrounding-occluded-windows")
+
+        # Network optimizations
         chrome_options.add_argument("--disable-background-networking")
         chrome_options.add_argument("--disable-sync")
+        chrome_options.add_argument("--disable-default-apps")
         chrome_options.add_argument("--disable-translate")
+
+        # UI/rendering optimizations
         chrome_options.add_argument("--mute-audio")
-        chrome_options.add_argument("--window-size=1920,1080")
+        chrome_options.add_argument("--window-size=1280,720")  # Smaller resolution
         chrome_options.add_argument("--log-level=3")
+        chrome_options.add_argument("--no-first-run")
+        chrome_options.add_argument("--no-default-browser-check")
+
+        # Anti-detection
+        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+        chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        chrome_options.add_experimental_option('useAutomationExtension', False)
         chrome_prefs = {
             "profile.default_content_setting_values": {
                 "images": 2,
@@ -40,14 +63,6 @@ class CopartonlineSpider(scrapy.Spider):
         chrome_options.add_argument("--remote-debugging-port=0")
         # chrome_options.add_argument("--user-data-dir=/tmp/chrome-user-data")
         chrome_options.add_argument("user-agent=Your-Custom-User-Agent")
-
-        # If you need headless mode (uncomment one of these if desired)
-        # chrome_options.add_argument("--headless=new")       # modern headless
-        # chrome_options.add_argument("--headless=chrome")    # fallback
-        # chrome_options.add_argument("--headless")           # legacy
-
-        # Explicit binary path on your Ubuntu server
-        # chrome_options.binary_location = "/usr/bin/google-chrome"
 
         # use webdriver-manager to get matching chromedriver
         service = Service(ChromeDriverManager().install())
@@ -70,24 +85,88 @@ class CopartonlineSpider(scrapy.Spider):
             pass
         
     def start_requests(self):
+        # First, handle login
+        self.handle_login()
+        
+        # After successful login, proceed to auction dashboard
         self.driver.get("https://www.copart.com/auctionDashboard/")
-        self.joinauction()
+        time.sleep(5)
+        self.driver.get("https://g2auction.copart.com/g2/#/")
+        self.join_new_auction()
 
-    def joinauction(self):
-        print("Press enter after you join auction!")
-        input()
-        self.parse_auction_page()
+    def handle_login(self):
+        """Handle login process with reCAPTCHA detection and retry logic"""
+        login_url = "https://www.copart.com/login"
+        max_attempts = 10
+        attempts = 0
+        
+        while attempts < max_attempts:
+            try:
+                print(f"Login attempt {attempts + 1}/{max_attempts}")
+                self.driver.get(login_url)
+                
+                # Wait for page to load and check for login form
+                try:
+                    WebDriverWait(self.driver, 15).until(
+                        EC.presence_of_element_located((By.ID, "username"))
+                    )
+                except:
+                    # Check for reCAPTCHA
+                    print("reCAPTCHA detected. Waiting 10 seconds and reloading...")
+                    attempts += 1
+                    time.sleep(10*attempts*attempts)
+                    continue  # Reload and try again
+                
+                # If no reCAPTCHA, proceed with login
+                print("No reCAPTCHA found. Filling login credentials...")
+                
+                # Fill username/email
+                username_field = self.driver.find_element(By.ID, "username")
+                username_field.clear()
+                username_field.send_keys("orunbaew.1505@gmail.com")  # Replace with your username
+                
+                # Fill password
+                password_field = self.driver.find_element(By.ID, "password")
+                password_field.clear()
+                password_field.send_keys("1Dz948438")  # Replace with your password
+                
+                # Click login button
+                login_button = self.driver.find_element(By.XPATH, 
+                    "//button[contains(text(), 'Sign into your account')]")
+                self.driver.execute_script("arguments[0].click();", login_button)
+                
+                # Wait for login to complete - check if we're redirected away from login page
+                WebDriverWait(self.driver, 15).until(
+                    EC.url_changes(login_url)
+                )
+                return  # Exit the function on successful login
+                
+            except Exception as e:
+                print(f"Login attempt {attempts + 1} failed: {e}")
+                attempts += 1
+                time.sleep(5)
+        
+        # If we reach here, all login attempts failed
+        print("All login attempts failed. Please check your credentials or try again later.")
+        self.driver.quit()
+    
+    # Restart the spider
+        cmdline.execute("scrapy crawl copartonline".split())
+        sys.exit(0)
+        raise Exception("Login failed after multiple attempts")
 
     def parse_auction_page(self):
         try:
             seen = set()
             old_price = 0
-            iframe = WebDriverWait(self.driver, 60).until(
-                EC.presence_of_element_located((By.TAG_NAME, "iframe"))
-            )
-            self.driver.switch_to.frame(iframe)
-            time.sleep(10)
-
+            # try: 
+            #     iframe = WebDriverWait(self.driver, 10).until(
+            #         EC.presence_of_element_located((By.TAG_NAME, "iframe"))
+            #     )
+            #     self.driver.switch_to.frame(iframe)
+            #     time.sleep(10)
+            # except Exception as e:
+            #     print("No Iframe found: {e}")
             while True:
                 # Try to get the price from SVG <text> elements
                 price = self.get_price_or_skip()
@@ -149,16 +228,15 @@ class CopartonlineSpider(scrapy.Spider):
             join_buttons = self.driver.find_elements(By.CSS_SELECTOR, "button.bid")
             try:
                 time.sleep(2)
-                join_buttons[0].click()
-                    
+                join_buttons[1].click()
+
             except Exception as e:
                 try:
                     time.sleep(1)
                     join_buttons[0].click()   
                 except Exception as e2:
                     raise Exception(f"Could not click any join button. First error: {e}, Second error: {e2}")
-            
-            self.driver.switch_to.default_content()
+            time.sleep(10)
             self.parse_auction_page()
 
         except Exception as e:
@@ -171,7 +249,7 @@ class CopartonlineSpider(scrapy.Spider):
     def check_auction_ended(self):
         """Check if auction has ended"""
         try:
-            auction_end = WebDriverWait(self.driver, 15).until(
+            auction_end = WebDriverWait(self.driver, 5).until(
                 EC.presence_of_element_located(
                     (By.XPATH, "//div[contains(@class,'sale-end') and text()='Auction Ended']")
                 )
@@ -179,6 +257,8 @@ class CopartonlineSpider(scrapy.Spider):
             if auction_end:
                 print("✅ Auction ended. Leaving auction...")
                 # Your auction end logic here
+                self.driver.get("https://www.copart.com/auctionDashboard/")
+                time.sleep(5)
                 self.driver.get("https://g2auction.copart.com/g2/#/")
                 self.join_new_auction()
                 return "AUCTION_ENDED"
@@ -189,15 +269,15 @@ class CopartonlineSpider(scrapy.Spider):
     def close_dialog_via_overlay(self):
         """Click on the overlay/mask to close the Recommended Auctions dialog"""
         try:
-            try:
-                iframe = WebDriverWait(self.driver, 60).until(
-                    EC.presence_of_element_located((By.ID, "iAuction5"))
-                )
-                self.driver.switch_to.frame(iframe)
-            except Exception as e:
-                print(f"❌ Could not find iframe: {e}")
+            # try:
+            #     iframe = WebDriverWait(self.driver, 15).until(
+            #         EC.presence_of_element_located((By.ID, "iAuction5"))
+            #     )
+            #     self.driver.switch_to.frame(iframe)
+            # except Exception as e:
+            #     print(f"❌ Could not find iframe: {e}")
             
-            close_button = WebDriverWait(self.driver, 60).until(
+            close_button = WebDriverWait(self.driver, 15).until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, "button.p-dialog-header-close"))
             )
             
