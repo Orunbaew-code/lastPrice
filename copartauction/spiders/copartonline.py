@@ -21,7 +21,7 @@ class CopartonlineSpider(scrapy.Spider):
 
         chrome_options = Options()
         # Essential headless server flags
-        # chrome_options.add_argument("--headless=new")
+        chrome_options.add_argument("--headless=new")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-gpu")
@@ -113,7 +113,7 @@ class CopartonlineSpider(scrapy.Spider):
                     # Check for reCAPTCHA
                     print("reCAPTCHA detected. Waiting 10 seconds and reloading...")
                     attempts += 1
-                    time.sleep(10*attempts*attempts)
+                    time.sleep(20*attempts*attempts)
                     continue  # Reload and try again
                 
                 # If no reCAPTCHA, proceed with login
@@ -127,7 +127,7 @@ class CopartonlineSpider(scrapy.Spider):
                 # Fill password
                 password_field = self.driver.find_element(By.ID, "password")
                 password_field.clear()
-                password_field.send_keys("12-34-Zxcvbnm")  # Replace with your password
+                password_field.send_keys("12-34-Asd")  # Replace with your password
                 
                 # Click login button
                 login_button = self.driver.find_element(By.XPATH, 
@@ -227,12 +227,12 @@ class CopartonlineSpider(scrapy.Spider):
             join_buttons = self.driver.find_elements(By.CSS_SELECTOR, "button.bid")
             try:
                 time.sleep(2)
-                join_buttons[1].click()
+                join_buttons[0].click()
 
             except Exception as e:
                 try:
                     time.sleep(1)
-                    join_buttons[0].click()   
+                    join_buttons[2].click()
                 except Exception as e2:
                     raise Exception(f"Could not click any join button. First error: {e}, Second error: {e2}")
             time.sleep(10)
@@ -248,19 +248,14 @@ class CopartonlineSpider(scrapy.Spider):
     def check_auction_ended(self):
         """Check if auction has ended"""
         try:
-            auction_end = WebDriverWait(self.driver, 5).until(
-                EC.presence_of_element_located(
-                    (By.XPATH, "//div[contains(@class,'sale-end') and text()='Auction Ended']")
-                )
-            )
-            if auction_end:
-                print("✅ Auction ended. Leaving auction...")
-                # Your auction end logic here
-                self.driver.get("https://www.copart.com/auctionDashboard/")
-                time.sleep(5)
-                self.driver.get("https://g2auction.copart.com/g2/#/")
-                self.join_new_auction()
-                return "AUCTION_ENDED"
+            auction_end = self.driver.find_element(By.XPATH, "//div[contains(@class,'sale-end') and text()='Auction Ended']")
+            print("✅ Auction ended. Leaving auction...")
+            # Your auction end logic here
+            self.driver.get("https://www.copart.com/auctionDashboard/")
+            time.sleep(5)
+            self.driver.get("https://g2auction.copart.com/g2/#/")
+            self.join_new_auction()
+            return "AUCTION_ENDED"
         except:
             # If auction end element not found, just continue
             try:
@@ -282,7 +277,7 @@ class CopartonlineSpider(scrapy.Spider):
             # except Exception as e:
             #     print(f"❌ Could not find iframe: {e}")
             
-            close_button = WebDriverWait(self.driver, 15).until(
+            close_button = WebDriverWait(self.driver, 30).until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, "button.p-dialog-header-close"))
             )
             
