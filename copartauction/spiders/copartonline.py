@@ -21,7 +21,7 @@ class CopartonlineSpider(scrapy.Spider):
 
         chrome_options = Options()
         # Essential headless server flags
-        chrome_options.add_argument("--headless=new")
+        # chrome_options.add_argument("--headless=new")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-gpu")
@@ -39,7 +39,7 @@ class CopartonlineSpider(scrapy.Spider):
         chrome_options.add_argument("--disable-default-apps")
         chrome_options.add_argument("--disable-translate")
 
-        # UI/rendering optimizations
+        # # UI/rendering optimizations
         chrome_options.add_argument("--mute-audio")
         chrome_options.add_argument("--window-size=1280,720")  # Smaller resolution
         chrome_options.add_argument("--log-level=3")
@@ -113,6 +113,7 @@ class CopartonlineSpider(scrapy.Spider):
                     # Check for reCAPTCHA
                     print("reCAPTCHA detected. Waiting 10 seconds and reloading...")
                     attempts += 1
+                    self.driver.get(login_url)
                     time.sleep(20*attempts*attempts)
                     continue  # Reload and try again
                 
@@ -122,12 +123,12 @@ class CopartonlineSpider(scrapy.Spider):
                 # Fill username/email
                 username_field = self.driver.find_element(By.ID, "username")
                 username_field.clear()
-                username_field.send_keys("orunbayew151515@gmail.com")  # Replace with your username
+                username_field.send_keys("orunbaew.1505@gmail.com")  # Replace with your username
                 
                 # Fill password
                 password_field = self.driver.find_element(By.ID, "password")
                 password_field.clear()
-                password_field.send_keys("12-34-Asd")  # Replace with your password
+                password_field.send_keys("1Dz948438")  # Replace with your password
                 
                 # Click login button
                 login_button = self.driver.find_element(By.XPATH, 
@@ -178,6 +179,13 @@ class CopartonlineSpider(scrapy.Spider):
                         seen.add(lot_number)
                         with open("auction_results.txt", "a", encoding="utf-8") as f:
                             f.write(f"{title}, {lot_number}, {old_price}, {price}\n")
+                elif price == "saleEnd":
+                    try:
+                        lot_number = self.driver.find_element(By.CSS_SELECTOR, "a.titlelbl.ellipsis[href*='/lot/']").text
+                    except e:
+                        check = self.check_auction_ended()
+                        if check == None:
+                            pass
                 else:
                     old_price = price if price else old_price
                 
@@ -208,7 +216,7 @@ class CopartonlineSpider(scrapy.Spider):
             # Grab all <text> nodes inside any SVG
             texts = self.driver.find_elements(By.CSS_SELECTOR, "svg text")
             if not texts:
-                return self.check_auction_ended()
+                return "saleEnd"
             for t in texts:
                 txt = t.text.strip()
                 if (txt == "Sold!") or (txt == "Approval!") or (any(ch.isdigit() for ch in txt)):
