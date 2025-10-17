@@ -25,6 +25,7 @@ class CopartonlineSpider(scrapy.Spider):
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--memory-pressure-off")
 
         # Performance optimizations for low server (keeping JS)
         chrome_options.add_argument("--disable-extensions")
@@ -182,7 +183,7 @@ class CopartonlineSpider(scrapy.Spider):
                 elif price == "saleEnd":
                     try:
                         lot_number = self.driver.find_element(By.CSS_SELECTOR, "a.titlelbl.ellipsis[href*='/lot/']").text
-                    except e:
+                    except Exception as e:
                         check = self.check_auction_ended()
                         if check == None:
                             pass
