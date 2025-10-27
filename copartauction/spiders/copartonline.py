@@ -24,7 +24,7 @@ class CopartonlineSpider(scrapy.Spider):
 
         chrome_options = Options()
         # Essential headless server flags
-        chrome_options.add_argument("--headless=new")
+        # chrome_options.add_argument("--headless=new")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-gpu")
@@ -298,6 +298,27 @@ class CopartonlineSpider(scrapy.Spider):
     def save_auction_result(self, title, lot_number, last_price, a_result, auction_date=None, sale_location=None):
         """Save auction result to PostgreSQL database - allows duplicate lot numbers"""
         try:
+            line = (
+                f"Title: {title} | "
+                f"Lot: {lot_number} | "
+                f"Price: {last_price} | "
+                f"Result: {a_result} | "
+                f"Date: {auction_date or 'N/A'} | "
+                f"Location: {sale_location or 'N/A'}\n"
+            )
+
+            # Append data to auction_result.txt
+            with open("auction_result.txt", "a", encoding="utf-8") as f:
+                f.write(line)
+
+            # Optional: you can also log success
+            self.logger.info(f"Auction result saved: Lot {lot_number}")
+
+        except Exception as e:
+            # Log any issues that occur during writing
+            self.logger.warning(f"Failed to save auction result: {e}")
+
+        try:
             # Check if this exact sale already exists to avoid duplicates
             check_query = """
             SELECT 1 FROM vehicles 
@@ -363,13 +384,13 @@ class CopartonlineSpider(scrapy.Spider):
                     )
                     join_buttons = self.driver.find_elements(By.CSS_SELECTOR, "button.bid")
                     time.sleep(2)
-                    join_buttons[2].click()
+                    join_buttons[3].click()
                     break
 
                 except Exception as e:
                     try:
                         time.sleep(1)
-                        join_buttons[1].click()
+                        join_buttons[0].click()
                         break
                     except Exception as e2:
                         self.log_exception(e, "Could not click any join button")
